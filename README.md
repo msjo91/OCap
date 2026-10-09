@@ -22,7 +22,7 @@ Models and adapters are downloaded from the Hugging Face Hub on first use:
 `mistralai/Mistral-7B-v0.1` with `predibase/*` adapters for LoRA Land (gated: run `hf auth login` and
 accept the model's terms first); `llava-hf/llava-1.5-7b-hf` for MM-MergeBench.
 
-The GSM8K eval for LoRA Land (`scripts/eval/loraland_gsm8k.sh`) uses lm-eval from a separate env:
+Capability evals (`scripts/eval/e6_capability.sh`, `loraland_gsm8k.sh`) use lm-eval from a separate env:
 `pip install lm_eval==0.4.13` there and set `LMEVAL_PYTHON` to its python.
 
 ## Data
@@ -64,7 +64,8 @@ src/                 merge rules (merge.py, asym.py), adapter pools (pool.py, lm
                      repo paths and the results/ layout (paths.py)
 scripts/
   data/              external data fetch, held-out suite ingestion and audit
-  merge/             build merged adapters (FinLoRA, LOO, rho/n-clients sweeps, MM, LoRA Land)
+  train/             client adapter training (N5 self-trained pool)
+  merge/             build merged adapters (FinLoRA, LOO, rho/n-clients sweeps, N5, MM, LoRA Land)
   eval/              evaluation entry points (run_eval.py, lmm_eval.py, loraland_eval.py, lm-eval wrappers)
   analysis/          aggregation, bootstrap tests, diagnostics, campaign verification
 tests/               pytest suite

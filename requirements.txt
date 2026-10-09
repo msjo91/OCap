@@ -22,5 +22,5 @@ matplotlib
 
 pytest
 
-# lm-eval (scripts/eval/loraland_gsm8k.sh) lives in a separate env,
+# lm-eval (capability evals, scripts/eval/e6_capability.sh, loraland_gsm8k.sh) lives in a separate env,
 # selected via LMEVAL_PYTHON:  pip install lm_eval==0.4.13
